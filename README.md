@@ -1,1 +1,173 @@
 # Kevv
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azii, Will You Be My Valentine?</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Times new roman', sans-serif;
+        background: linear-gradient(135deg, #ff5f8f, #ff9a9e);
+        overflow: hidden;
+        text-align: center;
+        color: white;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 50px;
+        border-radius: 25px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        max-width: 550px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        min-height: 60px;
+    }
+
+    .message {
+        font-size: 1.2rem;
+        margin: 20px 0 30px;
+        min-height: 80px;
+    }
+
+    button {
+        padding: 12px 28px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        margin: 10px;
+        transition: 0.3s;
+        font-weight: bold;
+    }
+
+    .yes1 {
+        background-color: white;
+        color: #ff4e88;
+    }
+
+    .yes2 {
+        background-color: #ff2e63;
+        color: white;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    #celebration {
+        display: none;
+        font-size: 1.8rem;
+        margin-top: 25px;
+        animation: pop 0.6s ease forwards;
+    }
+
+    .signature {
+        margin-top: 30px;
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+
+    @keyframes pop {
+        0% { transform: scale(0); }
+        100% { transform: scale(1); }
+    }
+
+    .hearts {
+        position: fixed;
+        bottom: -20px;
+        font-size: 20px;
+        animation: float 5s linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-110vh); }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1 id="title"></h1>
+    <div class="message" id="typedText"></div>
+
+    <div id="buttons" style="display:none;">
+        <button class="yes1" onclick="sayYes()">Yessss!!</button>
+        <button class="yes2" onclick="sayYes()">Yessssss</button>
+    </div>
+
+    <div id="celebration">
+        U betta🫵🏽🙂‍↕️🎉
+    </div>
+
+    <div class="signature">
+        Forever and always,<br>
+        Kev 💞
+    </div>
+</div>
+
+<script>
+const titleText = "Azii 💕";
+const messageText = "To my sexy,beautiful tight pussy chipolet bag 💖\n\nWill you be my Valentine????";
+
+let i = 0;
+let j = 0;
+
+function typeTitle() {
+    if (i < titleText.length) {
+        document.getElementById("title").innerHTML += titleText.charAt(i);
+        i++;
+        setTimeout(typeTitle, 100);
+    } else {
+        typeMessage();
+    }
+}
+
+function typeMessage() {
+    if (j < messageText.length) {
+        document.getElementById("typedText").innerHTML += messageText.charAt(j);
+        j++;
+        setTimeout(typeMessage, 40);
+    } else {
+        document.getElementById("buttons").style.display = "block";
+    }
+}
+
+function sayYes() {
+    document.getElementById("celebration").style.display = "block";
+    createHearts();
+}
+
+function createHearts() {
+    for (let i = 0; i < 25; i++) {
+        let heart = document.createElement("div");
+        heart.className = "hearts";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 7) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+}
+
+window.onload = typeTitle;
+</script>
+
+</body>
+</html>
