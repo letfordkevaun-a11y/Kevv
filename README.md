@@ -108,7 +108,7 @@
     </div>
 
     <div id="celebration">
-        U betta🫵🏽🙂‍↕️🎉
+        U betta!!🫵🏽🙂‍↕️🎉
     </div>
 
     <div class="signature">
