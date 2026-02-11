@@ -33,7 +33,7 @@
     }
 
     .message {
-        font-size: 1.2rem;
+        font-size:2rem;
         margin: 20px 0 30px;
         min-height: 80px;
     }
